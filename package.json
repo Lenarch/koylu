@@ -1,0 +1,12 @@
+{
+  "name": "koylu",
+  "version": "0.0.0",
+  "description": "Test",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node koylu.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
