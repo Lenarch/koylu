@@ -31,4 +31,4 @@ var prefix='-'
   channel.send(`Anatomy Sunucusuna Hoş Geldin,${member}`);
 });  
 
-client.login(NDkzMTE2NjEyMTI4NDA3NTYz.DojVWA.L9bcuBZwvIITg5eYsdNEkvZ3vE4);
+client.login(process.env.BOT_TOKEN);
