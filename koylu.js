@@ -19,7 +19,7 @@ client.on('ready', () => {
   }
 
   if (msg.content === 'selam') {
-    msg.chennel.send('Selam.');
+    msg.channel.send('Selam.');
   }
 
 });
