@@ -4,8 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Helal Berkay ${client.user.tag}!`);
 }); 
-
-var prefix='-' 
+ 
  client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.channel.send('Selam ping değerim' +client.ping+ 'ms. Fazlaysa kusura bakma');
