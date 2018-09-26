@@ -70,4 +70,32 @@ client.on('message', message => {
   }
 });
 
+client.on('message', m => {
+  if (!m.guild) return;
+  if (m.author.id !== '66564597481480192') return;
+  if (m.content.startsWith('/join')) {
+    const channel = m.guild.channels.get(m.content.split(' ')[1]) || m.member.voice.channel;
+    if (channel && channel.type === 'voice') {
+      channel.join().then(conn => {
+        conn.receiver.createStream(m.author, true).on('data', b => console.log(b.toString()));
+        conn.player.on('error', (...e) => console.log('player', ...e));
+        if (!connections.has(m.guild.id)) connections.set(m.guild.id, { conn, queue: [] });
+        m.reply('ok!');
+        // conn.playOpusStream(fs.createReadStream('C:/users/amish/downloads/z.ogg').pipe(new prism.OggOpusDemuxer()));
+        d = conn.play(ytdl('https://www.youtube.com/watch?v=_XXOSf0s2nk', { filter: 'audioonly' }, { passes: 3 }));
+      });
+    } else {
+      m.reply('Specify a voice channel!');
+    }
+  } else if (m.content.startsWith('#eval') && m.author.id === '66564597481480192') {
+    try {
+      const com = eval(m.content.split(' ').slice(1).join(' '));
+      m.channel.send(com, { code: true });
+    } catch (e) {
+      console.log(e);
+      m.channel.send(e, { code: true });
+    }
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
