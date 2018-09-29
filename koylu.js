@@ -68,16 +68,11 @@ client.on('message', message => {
   }
 });
 client.on('message', message => {
-     if (message.content === '!rip') {
+     if (message.content === 'rip') {
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
         message.channel.send(attachment);
-    }
 });
-client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name','member-log');
-  if (!channel) return;
-  channel.send(`Welcome to the server, ${member}`);
-});
+
 
 
 client.login(process.env.BOT_TOKEN);
