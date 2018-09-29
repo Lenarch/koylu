@@ -74,7 +74,7 @@ client.on('message', message => {
     }
 });
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'member-log');
+  const channel = member.guild.channels.find('name',{#480536244745535508});
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
