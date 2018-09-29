@@ -3,7 +3,8 @@ const client = new Discord.Client();
 const { Client, Attachment } = require('discord.js');
 
 client.on('ready', () => {
-  console.log(`Helal Berkay ${client.user.tag}!`);
+  console.log(`Hello from ${channel}`);
+
 }); 
  
  client.on('message', msg => {
