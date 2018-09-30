@@ -72,11 +72,9 @@ client.on('message', message => {
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
         message.channel.send(attachment);
 
-      if(message.content === 'yiaa') {
-               const attachment = new Attachment('https://i.hizliresim.com/1EXGEp.jpg');
-               message.channel.send(attachment);
-
-      
+     if(message.content === 'yiaa') {
+       const attachment = new Attachment('https://i.hizliresim.com/1EXGEp.jpg');
+       message.channel.send(attachment);
 });
 
  client.login(process.env.BOT_TOKEN);
