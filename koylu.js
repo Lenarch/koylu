@@ -73,8 +73,8 @@ client.on('message', message => {
         message.channel.send(attachment);
 });
 client.on('message', message => {
-     if (message.content === 'rip') {
-        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
+     if (message.content === 'yia') {
+        const attachment = new Attachment('https://i.hizliresim.com/1EXGEp.jpg');
         message.channel.send(attachment);
 });
  
