@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, Attachment } = require('discord.js');
+const { Client, RichEmbed } = require('discord.js');
 
 client.on('ready', () => {
  console.log(`HELAL ${client.user.tag}!`)
@@ -67,21 +68,14 @@ client.on('message', message => {
     }
   }
 });
-const { Client, RichEmbed } = require('discord.js')
-const client = new Client();
 client.on('message', message => {
   if (message.content === 'how to embed') {
     const embed = new RichEmbed()
- 
       .setTitle('A slick little embed')
- 
       .setColor(0xFF0000)
-
       .setDescription('Hello, this is a slick embed!');
-
     message.channel.send(embed);
   }
 });
-
 
 client.login(process.env.BOT_TOKEN);
