@@ -71,22 +71,12 @@ client.on('message', message => {
      if (message.content === 'rip') {
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
         message.channel.send(attachment);
+
+      if(message.content === 'yiaa') {
+               const attachment = new Attachment('https://i.hizliresim.com/1EXGEp.jpg');
+               message.channel.send(attachment);
+
+      
 });
 
  client.login(process.env.BOT_TOKEN);
-
- client.on('message', message => {
-  if (!message.guild) return;
-  
-  if (message.content === '/join') {
-   if (message.member.voiceChannel) {
-      message.member.voiceChannel.join()
-       .then(connection => {
-          message.reply('I have successfully connected to the channel!');
-        })
-         .catch(console.log);
-   } else {
-     message.reply('You need to join a voice channel first!');
-    }
-  }
-});
