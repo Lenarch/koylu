@@ -12,6 +12,10 @@ client.on('ready', () => {
     msg.channel.send('Selam ping değerim' +client.ping+ 'ms. Fazlaysa kusura bakma');
   } 
 
+  if (msg.content === 'selam') {
+    msg.channel.send('Selam!!');
+  } 
+
   if (msg.content === 'pp') {
     msg.channel.send(msg.author.avatarURL);
   }
