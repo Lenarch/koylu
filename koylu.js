@@ -24,6 +24,10 @@ client.on('ready', () => {
     msg.channel.send('Selam Anatomy Ailesi.');
   }
 
+  if (msg.content === 'günaydın') {
+   msg.channel.send('Günaydın kavdeşim');
+  }
+  
 });
 client.on('message', message => {
   if (!message.guild) return;
