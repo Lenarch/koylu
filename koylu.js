@@ -27,7 +27,9 @@ client.on('ready', () => {
   if (msg.content === 'günaydın') {
    msg.channel.send('Günaydın kavdeşim');
   }
-  
+  if (msg.content === 'iyi geceler') {
+   msg.reply('İyi Geceler');
+  }
 });
 client.on('message', message => {
   if (!message.guild) return;
@@ -62,7 +64,7 @@ client.on('message', message => {
         member.ban({
           reason: 'They were bad!',
         }).then(() => {
-          message.reply(`Successfully banned ${user.tag}`);
+          message.reply(` ${user.tag}`);
         }).catch(err => {
           message.reply('I was unable to ban the member');
           console.error(err);
@@ -81,5 +83,22 @@ client.on('message', message => {
         message.channel.send(attachment);
     }
 });
-
+var opus = require('node-opus');
+ 
+// Create the encoder.
+// Specify 48kHz sampling rate and 10ms frame size.
+// NOTE: The decoder must use the same values when decoding the packets.
+var rate = 48000;
+var encoder = new opus.OpusEncoder( rate );
+ 
+// Encode and decode.
+var frame_size = rate/100;
+var encoded = encoder.encode( buffer, frame_size );
+var decoded = encoder.decode( encoded, frame_size );
+ 
+// or create streams
+var channels = 2;
+var opusEncodeStream = new opus.Encoder(rate, channels, frame_size);
+var opusDecodeStream = new opus.Decoder(rate, channels, frame_size);
+});
 client.login(process.env.BOT_TOKEN);
