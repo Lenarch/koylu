@@ -83,42 +83,5 @@ client.on('message', message => {
         message.channel.send(attachment);
     }
 });
-connection.playStream(myReadableStream);
-
-const fs = require('fs');
-const stream = fs.createReadStream('./111.mp3');
-connection.playStream(stream);
-
-dispatcher.on('end', () => {
-});
-
-dispatcher.on('error', e => {
-  console.log(e);
-});
-
-dispatcher.setVolume(0.5);
-dispatcher.setVolume(1);
-
-console.log(dispatcher.time); 
-
-dispatcher.pause();
-dispatcher.resume();
-
-dispatcher.end();
-
-if (!message.guild) return;
-
-  if (message.content === '/join') {
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel.join()
-          message.reply('I have successfully connected to the channel!');
-        })
-        .catch(console.log);
-    } else {
-      message.reply('You need to join a voice channel first!');
-    }
-  }
-});
-
 
 client.login(process.env.BOT_TOKEN);
