@@ -33,7 +33,7 @@ client.on('ready', () => {
 });
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content.startsWith('---kick')) {
+  if (message.content.startsWith('222kick')) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -56,7 +56,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (!message.guild) return;
 
-  if (message.content.startsWith('---ban')) {
+  if (message.content.startsWith('222ban')) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
