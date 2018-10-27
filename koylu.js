@@ -19,7 +19,7 @@ client.on('ready', () => {
   if (msg.content === 'pp') {
     msg.channel.send(msg.author.avatarURL);
   }
-
+  
   if (msg.content === 'anatomye selam ver') {
     msg.channel.send('Selam Anatomy Ailesi.');
   }
@@ -29,6 +29,10 @@ client.on('ready', () => {
   }
   if (msg.content === 'iyi geceler') {
    msg.reply('İyi Geceler');
+  }
+  
+  if (msg.content === 'Kürt vuruşu') {
+   msg.reply('https://gelecegiyazanlar.turkcell.com.tr/konu/web-programlama/egitim/401-node.js/node.js-icinde-modul-tanimlama-ve-kullanma');
   }
 });
 client.on('message', message => {
