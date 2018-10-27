@@ -31,7 +31,7 @@ client.on('ready', () => {
    msg.reply('İyi Geceler');
   }
   
-  if (msg.content === 'Kürt vuruşu') {
+  if (msg.content === '222Kürt vuruşu') {
    msg.reply('https://gelecegiyazanlar.turkcell.com.tr/konu/web-programlama/egitim/401-node.js/node.js-icinde-modul-tanimlama-ve-kullanma');
   }
 });
