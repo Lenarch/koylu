@@ -81,6 +81,25 @@ client.on('message', message => {
     }
   }
 });
+const ms = require("ms");
+let member = msg.mentions.members.first();
+if (!member) return msg.reply("Olmadı bence sen bilirsin!");
+let muteRole = msg.guild.roles.find("name","Konuşamaz");
+if (!muteRole) return msg.reply("bil bakalım noldu");
+let params = msg.content.split(" ").slice(1);
+let time = params[1];
+if (!time) return msg.reply("bakacaz");
+
+member.addRole(muteRole.id);
+msg.channel.send(`susturdum kih konuşamazsın ${ms(ms(time), {long: true})} ${member.user.tag}`);
+
+setTimeout(function() {
+ member.removeRole(mute.id);
+ msg.channel.send(`${member.user.tag} konuş hadi bitti cezan ${ms(ms(time), {long: true})}`);
+}, ms(time));
+
+});
+
 client.on('message', message => {
     if (message.content === 'rip') {
         const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
