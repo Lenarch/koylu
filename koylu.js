@@ -61,7 +61,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (!message.guild) return;
 
-  if (message.content.startsWith('!ban') && (message.author.id === ayarlar.sahip)) {
+  if (message.content.startsWith('!ban') && (message.author.id === ayarlar.yapımcı)) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
