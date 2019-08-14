@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, Attachment } = require('discord.js');
+const ayarlar = require ('./ayarlars.json');
 
 client.on('ready', () => {
  console.log(`HELAL ${client.user.tag}!`)
@@ -61,7 +62,7 @@ client.on('message', message => {
   if (!message.guild) return;
 
   if (message.content.startsWith('!ban')) {
-   if  (msg.author.id !== ayarlar.sahip) {
+   if  (msg.author.id !== ayarlars.sahip) {
     message.reply('Yetkin yok');
    } else if {
     const user = message.mentions.users.first();
