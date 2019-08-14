@@ -32,13 +32,10 @@ client.on('ready', () => {
    msg.reply('İyi Geceler');
   }
   
-  if (msg.content === '222Kürt vuruşu') {
-   msg.reply('https://gelecegiyazanlar.turkcell.com.tr/konu/web-programlama/egitim/401-node.js/node.js-icinde-modul-tanimlama-ve-kullanma');
-  }
 });
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content.startsWith('•kick')) {
+  if (message.content.startsWith('!kick') && (message.author.id == 332060005782126592)) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
