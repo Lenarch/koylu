@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, Attachment } = require('discord.js');
+const ayarlar = require ('./ayarlar.json');
 
 client.on('ready', () => {
  console.log(`HELAL ${client.user.tag}!`)
