@@ -30,7 +30,7 @@ client.on('ready', () => {
 });
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content('!kick') {
+  if (message.content.startsWith('!kick')) {
    if (msg.author.id !== ayarlar.sahip) {
     message.reply('Yetkili değilsin');
   } else {
@@ -56,7 +56,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (!message.guild) return;
 
-  if (message.content.startsWith('!ban') {
+  if (message.content.startsWith('!ban')) {
    if (msg.author.id !== ayarlar.sahip) {
     message.reply('Yetkin yok');
    } else {
