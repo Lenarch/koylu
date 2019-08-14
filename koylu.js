@@ -16,51 +16,50 @@ client.on('ready', () => {
     msg.channel.send('Selam!!');
   } 
 
-  if (msg.content === 'pp') {
+  if (msg.content === '!Avatar') {
     msg.channel.send(msg.author.avatarURL);
-  }
-  
-  if (msg.content === 'anatomye selam ver') {
-    msg.channel.send('Selam Anatomy Ailesi.');
   }
 
   if (msg.content === 'günaydın') {
-   msg.channel.send('Günaydın kavdeşim');
+   msg.channel.send('Günaydın');
   }
   if (msg.content === 'iyi geceler') {
    msg.reply('İyi Geceler');
   }
   
-  if (msg.content === '222Kürt vuruşu') {
-   msg.reply('https://gelecegiyazanlar.turkcell.com.tr/konu/web-programlama/egitim/401-node.js/node.js-icinde-modul-tanimlama-ve-kullanma');
-  }
 });
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content.startsWith('•kick')) {
+  if (message.content('!kick') {
+   if (msg.author.id !== ayarlar.sahip) {
+    message.reply('Yetkili değilsin');
+  } else {
     const user = message.mentions.users.first();
-    if (user) {
-      const member = message.guild.member(user);
-      if (member) {
-        member.kick('Optional reason that will display in the audit logs').then(() => {
-          message.reply(`Successfully kicked ${user.tag}`);
-        }).catch(err => {
-          message.reply('I was unable to kick the member');
-          console.error(err);
-        });
-      } else {
-        message.reply('That user isn\'t in this guild!');
-      }
-    } else {
-      message.reply('You didn\'t mention the user to kick!');
-    }
-  }
+     if (user) {
+       const member = message.guild.member(user);
+       if (member) {
+         member.kick('Optional reason that will display in the audit logs').then(() => {
+           message.reply(`Successfully kicked ${user.tag}`);
+         }).catch(err => {
+           message.reply('I was unable to kick the member');
+           console.error(err);
+         });
+       } else {
+         message.reply('That user isn\'t in this guild!');
+       }
+     } else {
+       message.reply('You didn\'t mention the user to kick!');
+     }
+   }
 });
 
 client.on('message', message => {
   if (!message.guild) return;
 
-  if (message.content.startsWith('•ban')) {
+  if (message.content.startsWith('!ban') {
+   if (msg.author.id !== ayarlar.sahip) {
+    message.reply('Yetkin yok');
+   } else {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
