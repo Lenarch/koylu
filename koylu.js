@@ -64,7 +64,7 @@ client.on('message', message => {
   if (message.content.startsWith('!ban')) {
    if  (msg.author.id !== ayarlars.sahip) {
     message.reply('Yetkin yok');
-   } else if {
+   } else {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
